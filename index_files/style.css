@@ -1,0 +1,659 @@
+/**
+ * PageTranslate - Стили для виджета перевода страниц
+ *
+ * @author Sergey Agapov
+ * @contact Telegram: @handpc
+ * @contact Email: handpc@mail.ru
+ * @github https://github.com/handpc/pagetranslate
+ */
+.yandex-text-highlight,
+font > font {
+  background-color: transparent !important;
+  box-shadow: none !important;
+  box-sizing: inherit;
+}
+.pagetranslate-dropdown {
+  position: relative;
+  display: inline-block;
+}
+.pagetranslate-dropdown .pagetranslate-langs {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 12px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-weight: 500;
+  line-height: 1.5;
+  color: #1e293b;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease ease;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  position: relative;
+  min-width: 110px;
+  justify-content: flex-start;
+  padding: 4px 12px 4px 12px;
+  text-align: left;
+  font-size: 14px;
+  text-indent: 26px;
+}
+.pagetranslate-dropdown .pagetranslate-langs:hover {
+  background: #e2e8f0;
+  border-color: #cbd5e1;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+.pagetranslate-dropdown .pagetranslate-langs:focus {
+  outline: none;
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+.pagetranslate-dropdown .pagetranslate-langs:active {
+  transform: translateY(1px);
+}
+.pagetranslate-dropdown .pagetranslate-langs::before {
+  content: '';
+  position: absolute;
+  left: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 15px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 3px;
+  border: 1px solid #e2e8f0;
+  transition: all 0.2s ease ease;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+.pagetranslate-dropdown .pagetranslate-langs::after {
+  content: '▼';
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 9px;
+  color: #64748b;
+  transition: all 0.2s ease ease;
+}
+.pagetranslate-dropdown .pagetranslate-langs.open::after {
+  transform: translateY(-50%) rotate(180deg);
+}
+.pagetranslate-dropdown .pagetranslate-langs:hover::before {
+  border-color: #cbd5e1;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+.pagetranslate-dropdown .pagetranslate-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  margin-top: 4px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: all 0.2s ease ease;
+  z-index: 1000;
+  min-width: 100%;
+  padding: 2px 0;
+}
+.pagetranslate-dropdown .pagetranslate-menu.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+@media (max-width: 1024px) {
+  .pagetranslate-dropdown .pagetranslate-menu {
+    left: 0;
+    right: auto;
+    min-width: 180px;
+  }
+  .pagetranslate-dropdown .pagetranslate-menu.align-right {
+    left: auto;
+    right: 0;
+  }
+}
+.pagetranslate-dropdown .pagetranslate-menu .pagetranslate-lang-item {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 4px 8px 4px 8px;
+  border: none;
+  border-radius: 0;
+  background: transparent;
+  text-align: left;
+  font-size: 14px;
+  color: #1e293b;
+  justify-content: space-evenly;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.2s ease ease;
+  padding-left: 30px;
+}
+.pagetranslate-dropdown .pagetranslate-menu .pagetranslate-lang-item::before {
+  left: 8px;
+  width: 20px;
+  height: 15px;
+  border-radius: 3px;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+.pagetranslate-dropdown .pagetranslate-menu .pagetranslate-lang-item:hover {
+  background: #f8fafc;
+  color: #2563eb;
+}
+.pagetranslate-dropdown .pagetranslate-menu .pagetranslate-lang-item:hover::before {
+  border-color: #cbd5e1;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+.pagetranslate-dropdown .pagetranslate-menu .pagetranslate-lang-item.pagetranslate-lang-active {
+  background: #2563eb;
+  color: #ffffff;
+  font-weight: 600;
+}
+.pagetranslate-dropdown .pagetranslate-menu .pagetranslate-lang-item.pagetranslate-lang-active::before {
+  border-color: rgba(255, 255, 255, 0.3);
+}
+.pagetranslate-block .pagetranslate-langs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  padding: 8px;
+  background: #f8fafc;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+.pagetranslate-block .pagetranslate-lang-item {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 12px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-weight: 500;
+  line-height: 1.5;
+  color: #1e293b;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease ease;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  flex: 0 0 auto;
+  padding: 4px 8px 4px 26px;
+  font-size: 14px;
+}
+.pagetranslate-block .pagetranslate-lang-item:hover {
+  background: #e2e8f0;
+  border-color: #cbd5e1;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+.pagetranslate-block .pagetranslate-lang-item:focus {
+  outline: none;
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+.pagetranslate-block .pagetranslate-lang-item:active {
+  transform: translateY(1px);
+}
+.pagetranslate-block .pagetranslate-lang-item::before {
+  left: 4px;
+  width: 20px;
+  height: 15px;
+  border-radius: 3px;
+}
+.pagetranslate-block .pagetranslate-lang-item:hover::before {
+  border-color: #cbd5e1;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+.pagetranslate-block .pagetranslate-lang-item.pagetranslate-lang-active {
+  background: #2563eb;
+  color: #ffffff;
+  border-color: #2563eb;
+  font-weight: 600;
+}
+.pagetranslate-block .pagetranslate-lang-item.pagetranslate-lang-active::before {
+  border-color: rgba(255, 255, 255, 0.3);
+}
+.pagetranslate-block .pagetranslate-lang-item.pagetranslate-lang-active:hover {
+  background: #1d4ed8;
+  border-color: #1d4ed8;
+}
+.pagetranslate-lang-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  border: none;
+  background: none;
+  cursor: pointer;
+  transition: all 0.2s ease ease;
+}
+[data-pagetranslate-lang] {
+  position: relative;
+  padding-left: 28px;
+}
+[data-pagetranslate-lang]::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 15px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 3px;
+  border: 1px solid #e2e8f0;
+  transition: all 0.2s ease ease;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+[data-pagetranslate-lang]:hover::before {
+  border-color: #cbd5e1;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  transform: translateY(-50%) scale(1.02);
+}
+[data-pagetranslate-lang="ru"]::before {
+  background-image: url('https://poliprof.ru/bitrix/templates/aspro-allcorp2/libs/pagetranslate/img/flags/ru.svg');
+}
+[data-pagetranslate-lang="en"]::before {
+  background-image: url('https://poliprof.ru/bitrix/templates/aspro-allcorp2/libs/pagetranslate/img/flags/en.svg');
+}
+[data-pagetranslate-lang="de"]::before {
+  background-image: url('https://poliprof.ru/bitrix/templates/aspro-allcorp2/libs/pagetranslate/img/flags/de.svg');
+}
+[data-pagetranslate-lang="fr"]::before {
+  background-image: url('https://poliprof.ru/bitrix/templates/aspro-allcorp2/libs/pagetranslate/img/flags/fr.svg');
+}
+[data-pagetranslate-lang="es"]::before {
+  background-image: url('https://poliprof.ru/bitrix/templates/aspro-allcorp2/libs/pagetranslate/img/flags/es.svg');
+}
+[data-pagetranslate-lang="it"]::before {
+  background-image: url('https://poliprof.ru/bitrix/templates/aspro-allcorp2/libs/pagetranslate/img/flags/it.svg');
+}
+[data-pagetranslate-lang="pt"]::before {
+  background-image: url('https://poliprof.ru/bitrix/templates/aspro-allcorp2/libs/pagetranslate/img/flags/pt.svg');
+}
+[data-pagetranslate-lang="zh"]::before {
+  background-image: url('https://poliprof.ru/bitrix/templates/aspro-allcorp2/libs/pagetranslate/img/flags/zh.svg');
+}
+[data-pagetranslate-lang="ar"]::before {
+  background-image: url('https://poliprof.ru/bitrix/templates/aspro-allcorp2/libs/pagetranslate/img/flags/ar.svg');
+}
+[data-pagetranslate-lang="hi"]::before {
+  background-image: url('https://poliprof.ru/bitrix/templates/aspro-allcorp2/libs/pagetranslate/img/flags/hi.svg');
+}
+[data-pagetranslate-lang="az"]::before {
+  background-image: url('https://poliprof.ru/bitrix/templates/aspro-allcorp2/libs/pagetranslate/img/flags/az.svg');
+}
+[data-pagetranslate-lang="be"]::before {
+  background-image: url('https://poliprof.ru/bitrix/templates/aspro-allcorp2/libs/pagetranslate/img/flags/be.svg');
+}
+[data-pagetranslate-lang="hy"]::before {
+  background-image: url('https://poliprof.ru/bitrix/templates/aspro-allcorp2/libs/pagetranslate/img/flags/hy.svg');
+}
+[data-pagetranslate-lang="ka"]::before {
+  background-image: url('https://poliprof.ru/bitrix/templates/aspro-allcorp2/libs/pagetranslate/img/flags/ka.svg');
+}
+[data-pagetranslate-lang="kk"]::before {
+  background-image: url('https://poliprof.ru/bitrix/templates/aspro-allcorp2/libs/pagetranslate/img/flags/kk.svg');
+}
+[data-pagetranslate-lang="ky"]::before {
+  background-image: url('https://poliprof.ru/bitrix/templates/aspro-allcorp2/libs/pagetranslate/img/flags/ky.svg');
+}
+[data-pagetranslate-lang="ro"]::before {
+  background-image: url('https://poliprof.ru/bitrix/templates/aspro-allcorp2/libs/pagetranslate/img/flags/ro.svg');
+}
+[data-pagetranslate-lang="tg"]::before {
+  background-image: url('https://poliprof.ru/bitrix/templates/aspro-allcorp2/libs/pagetranslate/img/flags/tg.svg');
+}
+[data-pagetranslate-lang="tk"]::before {
+  background-image: url('https://poliprof.ru/bitrix/templates/aspro-allcorp2/libs/pagetranslate/img/flags/tk.svg');
+}
+[data-pagetranslate-lang="uk"]::before {
+  background-image: url('https://poliprof.ru/bitrix/templates/aspro-allcorp2/libs/pagetranslate/img/flags/uk.svg');
+}
+[data-pagetranslate-lang="uz"]::before {
+  background-image: url('https://poliprof.ru/bitrix/templates/aspro-allcorp2/libs/pagetranslate/img/flags/uz.svg');
+}
+.pagetranslate-dropdown .pagetranslate-langs[data-current-lang="ru"]::before {
+  background-image: url('https://poliprof.ru/bitrix/templates/aspro-allcorp2/libs/pagetranslate/img/flags/ru.svg');
+}
+.pagetranslate-dropdown .pagetranslate-langs[data-current-lang="en"]::before {
+  background-image: url('https://poliprof.ru/bitrix/templates/aspro-allcorp2/libs/pagetranslate/img/flags/en.svg');
+}
+.pagetranslate-dropdown .pagetranslate-langs[data-current-lang="de"]::before {
+  background-image: url('https://poliprof.ru/bitrix/templates/aspro-allcorp2/libs/pagetranslate/img/flags/de.svg');
+}
+.pagetranslate-dropdown .pagetranslate-langs[data-current-lang="fr"]::before {
+  background-image: url('https://poliprof.ru/bitrix/templates/aspro-allcorp2/libs/pagetranslate/img/flags/fr.svg');
+}
+.pagetranslate-dropdown .pagetranslate-langs[data-current-lang="es"]::before {
+  background-image: url('https://poliprof.ru/bitrix/templates/aspro-allcorp2/libs/pagetranslate/img/flags/es.svg');
+}
+.pagetranslate-dropdown .pagetranslate-langs[data-current-lang="it"]::before {
+  background-image: url('https://poliprof.ru/bitrix/templates/aspro-allcorp2/libs/pagetranslate/img/flags/it.svg');
+}
+.pagetranslate-dropdown .pagetranslate-langs[data-current-lang="pt"]::before {
+  background-image: url('https://poliprof.ru/bitrix/templates/aspro-allcorp2/libs/pagetranslate/img/flags/pt.svg');
+}
+.pagetranslate-dropdown .pagetranslate-langs[data-current-lang="zh"]::before {
+  background-image: url('https://poliprof.ru/bitrix/templates/aspro-allcorp2/libs/pagetranslate/img/flags/zh.svg');
+}
+.pagetranslate-dropdown .pagetranslate-langs[data-current-lang="ar"]::before {
+  background-image: url('https://poliprof.ru/bitrix/templates/aspro-allcorp2/libs/pagetranslate/img/flags/ar.svg');
+}
+.pagetranslate-dropdown .pagetranslate-langs[data-current-lang="hi"]::before {
+  background-image: url('https://poliprof.ru/bitrix/templates/aspro-allcorp2/libs/pagetranslate/img/flags/hi.svg');
+}
+.pagetranslate-dropdown .pagetranslate-langs[data-current-lang="az"]::before {
+  background-image: url('https://poliprof.ru/bitrix/templates/aspro-allcorp2/libs/pagetranslate/img/flags/az.svg');
+}
+.pagetranslate-dropdown .pagetranslate-langs[data-current-lang="be"]::before {
+  background-image: url('https://poliprof.ru/bitrix/templates/aspro-allcorp2/libs/pagetranslate/img/flags/be.svg');
+}
+.pagetranslate-dropdown .pagetranslate-langs[data-current-lang="hy"]::before {
+  background-image: url('https://poliprof.ru/bitrix/templates/aspro-allcorp2/libs/pagetranslate/img/flags/hy.svg');
+}
+.pagetranslate-dropdown .pagetranslate-langs[data-current-lang="ka"]::before {
+  background-image: url('https://poliprof.ru/bitrix/templates/aspro-allcorp2/libs/pagetranslate/img/flags/ka.svg');
+}
+.pagetranslate-dropdown .pagetranslate-langs[data-current-lang="kk"]::before {
+  background-image: url('https://poliprof.ru/bitrix/templates/aspro-allcorp2/libs/pagetranslate/img/flags/kk.svg');
+}
+.pagetranslate-dropdown .pagetranslate-langs[data-current-lang="ky"]::before {
+  background-image: url('https://poliprof.ru/bitrix/templates/aspro-allcorp2/libs/pagetranslate/img/flags/ky.svg');
+}
+.pagetranslate-dropdown .pagetranslate-langs[data-current-lang="ro"]::before {
+  background-image: url('https://poliprof.ru/bitrix/templates/aspro-allcorp2/libs/pagetranslate/img/flags/ro.svg');
+}
+.pagetranslate-dropdown .pagetranslate-langs[data-current-lang="tg"]::before {
+  background-image: url('https://poliprof.ru/bitrix/templates/aspro-allcorp2/libs/pagetranslate/img/flags/tg.svg');
+}
+.pagetranslate-dropdown .pagetranslate-langs[data-current-lang="tk"]::before {
+  background-image: url('https://poliprof.ru/bitrix/templates/aspro-allcorp2/libs/pagetranslate/img/flags/tk.svg');
+}
+.pagetranslate-dropdown .pagetranslate-langs[data-current-lang="uk"]::before {
+  background-image: url('https://poliprof.ru/bitrix/templates/aspro-allcorp2/libs/pagetranslate/img/flags/uk.svg');
+}
+.pagetranslate-dropdown .pagetranslate-langs[data-current-lang="uz"]::before {
+  background-image: url('https://poliprof.ru/bitrix/templates/aspro-allcorp2/libs/pagetranslate/img/flags/uz.svg');
+}
+.pagetranslate-dropdown .pagetranslate-langs::before {
+  width: 20px;
+  height: 15px;
+  border-radius: 3px;
+}
+.pagetranslate-dropdown .pagetranslate-menu [data-pagetranslate-lang]::before {
+  width: 20px;
+  height: 15px;
+  border-radius: 3px;
+}
+.pagetranslate-block [data-pagetranslate-lang]::before {
+  width: 20px;
+  height: 15px;
+  border-radius: 3px;
+}
+.pagetranslate-lang-active::before {
+  border-color: #2563eb;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+.pagetranslate-no-flags [data-pagetranslate-lang] {
+  padding-left: 0;
+}
+.pagetranslate-no-flags [data-pagetranslate-lang]::before {
+  display: none;
+}
+.pagetranslate-info {
+  background: #f8fafc;
+  border-radius: 8px 8px 0 0;
+  bottom: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-size: 16px;
+  padding: 12px 0;
+  text-align: center;
+  width: 100%;
+  position: fixed;
+  z-index: 1050;
+  transition: all 0.2s ease ease;
+}
+.pagetranslate-info:hover {
+  background: #e2e8f0;
+}
+@media (max-width: 480px) {
+  .pagetranslate-dropdown {
+    display: inline-block;
+  }
+  .pagetranslate-dropdown .pagetranslate-langs {
+    min-width: 32px;
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    text-indent: 0;
+    font-size: 0;
+    border-radius: 6px;
+  }
+  .pagetranslate-dropdown .pagetranslate-langs::before {
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 20px;
+    height: 15px;
+    border: 1px solid #e2e8f0;
+    border-radius: 3px;
+  }
+  .pagetranslate-dropdown .pagetranslate-langs::after {
+    display: none;
+  }
+  .pagetranslate-dropdown .pagetranslate-menu {
+    min-width: 150px;
+    left: 0;
+    right: auto;
+    margin-top: 4px;
+  }
+  .pagetranslate-dropdown .pagetranslate-menu .pagetranslate-lang-item {
+    padding: 0 12px;
+    padding-left: 18px;
+    font-size: 16px;
+    min-height: 24px;
+  }
+  .pagetranslate-dropdown .pagetranslate-menu .pagetranslate-lang-item::before {
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 15px;
+    border: 1px solid #e2e8f0;
+    border-radius: 3px;
+  }
+  .pagetranslate-block .pagetranslate-langs {
+    padding: 8px;
+    gap: 8px;
+    justify-content: flex-start;
+  }
+  .pagetranslate-block .pagetranslate-lang-item {
+    padding: 0;
+    width: 32px;
+    height: 32px;
+    min-width: 32px;
+    font-size: 0;
+    border-radius: 6px;
+  }
+  .pagetranslate-block .pagetranslate-lang-item::before {
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 20px;
+    height: 15px;
+    border: 1px solid #e2e8f0;
+    border-radius: 3px;
+  }
+}
+@media (width: 640px) {
+  .pagetranslate-dropdown .pagetranslate-langs {
+    min-width: 130px;
+    padding: 4px 12px 4px 16px;
+    font-size: 14px;
+  }
+  .pagetranslate-dropdown .pagetranslate-langs::before {
+    left: 8px;
+    width: 20px;
+    height: 15px;
+  }
+  .pagetranslate-dropdown .pagetranslate-langs::after {
+    display: block;
+  }
+  .pagetranslate-dropdown .pagetranslate-menu {
+    min-width: 180px;
+  }
+  .pagetranslate-dropdown .pagetranslate-menu .pagetranslate-lang-item {
+    padding: 8px 12px;
+    padding-left: 32px;
+    font-size: 14px;
+    min-height: 32px;
+  }
+  .pagetranslate-block .pagetranslate-lang-item {
+    padding: 4px 12px 4px 16px;
+    width: auto;
+    min-width: 90px;
+    height: 32px;
+    font-size: 14px;
+  }
+}
+@media (min-width: 641px) and (max-width: 1024px) {
+  .pagetranslate-dropdown .pagetranslate-langs {
+    min-width: 140px;
+    padding: 8px 12px 8px 16px;
+    font-size: 16px;
+  }
+  .pagetranslate-dropdown .pagetranslate-langs::before {
+    width: 20px;
+    height: 15px;
+  }
+  .pagetranslate-dropdown .pagetranslate-menu {
+    min-width: 180px;
+  }
+  .pagetranslate-dropdown .pagetranslate-menu .pagetranslate-lang-item {
+    padding: 12px 16px;
+    padding-left: 32px;
+    font-size: 16px;
+    min-height: 32px;
+  }
+  .pagetranslate-block .pagetranslate-lang-item {
+    padding: 8px 12px 8px 16px;
+    font-size: 16px;
+    min-height: 32px;
+  }
+}
+@media (min-width: 1025px) {
+  .pagetranslate-dropdown .pagetranslate-langs {
+    min-width: 125px;
+    font-size: 16px;
+    margin-left: 15px;
+  }
+  .pagetranslate-dropdown .pagetranslate-langs:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  }
+  .pagetranslate-dropdown .pagetranslate-menu .pagetranslate-lang-item:hover {
+    transform: translateX(2px);
+  }
+  .pagetranslate-block .pagetranslate-lang-item:hover {
+    transform: translateY(-1px);
+  }
+}
+.pagetranslate-theme-dark {
+  --bg-primary: #1e293b;
+  --bg-secondary: #334155;
+  --bg-hover: #475569;
+  --text-primary: #f1f5f9;
+  --text-secondary: #cbd5e1;
+  --border-color: #475569;
+  --border-hover: #64748b;
+  --primary-color: #3b82f6;
+  --primary-hover: #2563eb;
+}
+.pagetranslate-theme-dark .pagetranslate-dropdown .pagetranslate-langs {
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  border-color: var(--border-color);
+}
+.pagetranslate-theme-dark .pagetranslate-dropdown .pagetranslate-langs:hover {
+  background: var(--bg-hover);
+  border-color: var(--border-hover);
+}
+.pagetranslate-theme-dark .pagetranslate-dropdown .pagetranslate-menu {
+  background: var(--bg-primary);
+  border-color: var(--border-color);
+}
+.pagetranslate-theme-dark .pagetranslate-dropdown .pagetranslate-menu .pagetranslate-lang-item {
+  color: var(--text-secondary);
+}
+.pagetranslate-theme-dark .pagetranslate-dropdown .pagetranslate-menu .pagetranslate-lang-item:hover {
+  background: var(--bg-secondary);
+  color: var(--primary-color);
+}
+.pagetranslate-theme-dark .pagetranslate-dropdown .pagetranslate-menu .pagetranslate-lang-item.pagetranslate-lang-active {
+  background: var(--primary-color);
+  color: var(--text-primary);
+}
+.pagetranslate-theme-dark .pagetranslate-block .pagetranslate-langs {
+  background: var(--bg-primary);
+  border-color: var(--border-color);
+}
+.pagetranslate-theme-dark .pagetranslate-block .pagetranslate-lang-item {
+  background: var(--bg-secondary);
+  color: var(--text-secondary);
+  border-color: var(--border-color);
+}
+.pagetranslate-theme-dark .pagetranslate-block .pagetranslate-lang-item:hover {
+  background: var(--bg-hover);
+  border-color: var(--border-hover);
+}
+.pagetranslate-theme-dark .pagetranslate-block .pagetranslate-lang-item.pagetranslate-lang-active {
+  background: var(--primary-color);
+  color: var(--text-primary);
+  border-color: var(--primary-color);
+}
+@keyframes pagetranslate-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes pagetranslate-fade-out {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+.pagetranslate-animate-in {
+  animation: pagetranslate-fade-in 0.3s ease-out;
+}
+.pagetranslate-animate-out {
+  animation: pagetranslate-fade-out 0.3s ease-in;
+}
+.pagetranslate-hidden {
+  display: none !important;
+}
+.pagetranslate-visible {
+  display: block !important;
+}
+/*# sourceMappingURL=style.css.map */

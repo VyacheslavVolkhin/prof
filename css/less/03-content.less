@@ -1,0 +1,34 @@
+/* ----------------------------------- *\
+			content styles
+\* ----------------------------------- */
+.bg-full-wrap {
+	display: block;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 50%;
+	width: 100dvw;
+	min-width: var(--min);
+	transform: translateX(-50%);
+	overflow: hidden;
+}
+.bg-box {
+	position: relative;
+	z-index: 2;
+	&:before {
+		content: "";
+		display: block;
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 50%;
+		width: 100dvw;
+		min-width: var(--min);
+		transform: translateX(-50%);
+		overflow: hidden;
+		background: var(--clr-bg-light);
+	}
+	&>*:last-child {
+		margin-bottom: 0;
+	}
+}

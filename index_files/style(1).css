@@ -1,0 +1,23 @@
+.title-search-result .items.scrollblock  {
+    max-height: 239px;
+}
+.title-search-result .all_result_title {
+    width:100%;
+    padding: 20px 0px 20px 0px;
+    border: none;
+    
+}
+.title-search-result .bx_item_block.all_result{
+    padding-left: 0px;
+}
+.title-search-result .all_result_title.btn.btn-default {
+    border:none;
+    text-transform: uppercase;
+    font-size: 0.8666em;
+    letter-spacing: 0.5px;
+    margin: 0;
+    
+}
+.title-search-result .all_result_title.btn:not(:hover) {
+    background: #fbfbfb;
+}

@@ -1,0 +1,12 @@
+/*@media (min-width: 992px) {
+	.body .content-md > .right_block.catalog_page {width: 100%;}
+	.content-md > .right_block.narrow_Y.catalog_page .section-content-wrapper {width: 75%;}
+	.content-md > .right_block.narrow_N.catalog_page .section-content-wrapper {width: 100%;}
+	.right_block.catalog_page .main-catalog-wrapper .left_block {margin-top: 0;}
+}*/
+/*@media (max-width: 991px) {
+	.right_block .main-catalog-wrapper {display: block;}
+}*/
+body .body:not(.index) .container {
+margin-top: 0;
+}
